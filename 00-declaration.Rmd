@@ -1,0 +1,16 @@
+---
+knit: "bookdown::render_book"
+---
+
+# Declaration {-}
+
+I hereby declare that this thesis contains no material which has been accepted for the award of any other degree or diploma in any university or equivalent institution, and that, to the best of my knowledge and belief, this thesis contains no material previously published or written by another person, except where due reference is made in the text of the thesis.
+
+
+
+
+
+
+
+
+\vspace*{2cm}\par\authorname

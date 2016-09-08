@@ -1,0 +1,10 @@
+book_filename: "thesis"
+chapter_name: "Chapter "
+rmd_files: ["myThesis.Rmd",
+  "00-acknowledge.Rmd",
+  "00-declaration.Rmd",
+  "00-preface.Rmd",
+  "00-abstract.Rmd",
+  "01-chap1.Rmd",
+  "02-chap2.Rmd",
+  "A-appA.Rmd"]

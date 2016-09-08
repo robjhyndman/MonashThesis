@@ -1,0 +1,20 @@
+---
+title: 'Thesis title'
+degreetype: 'Doctor of Philosophy'
+author: 'Joe Bloggs'
+degrees: 'B.Sc. (Hons), University of Tangambalanga'
+knit: "bookdown::render_book"
+---
+
+<!-- 
+Edit these lines as appropriate (apart from line 6).
+The actual thesis content is in several Rmd files.
+
+You'll need to edit the _bookdown.yml file to set the order in which you'd like them to appear. 
+
+If you have specific LaTeX packages to add, put them in monashthesis.tex.
+
+You will need to ensure you have installed the knitr and bookdown packages for R.
+
+You will also need LaTeX installed on your computer.
+-->

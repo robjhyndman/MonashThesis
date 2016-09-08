@@ -1,0 +1,11 @@
+bookdown::pdf_book:
+  template: monashthesis.tex
+  fig_caption: yes
+  fig_height: 3.8
+  fig_width: 6.3
+  keep_tex: yes
+  number_sections: yes
+  pandoc_args: [
+    "--chapters"
+  ]
+  citation_package: biblatex
