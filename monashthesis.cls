@@ -204,7 +204,7 @@
 
 				\vfill\vfill
 
-        \includegraphics[width=3cm]{crest}
+        \includegraphics[width=3cm]{figures/crest}
 
 				Department of Econometrics and Business Statistics\\
 				Monash University\\Australia
