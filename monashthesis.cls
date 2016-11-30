@@ -1,6 +1,7 @@
 %% monashthesis Class for LaTeX2e.
-%% Version 4.0
+%% Version 4.1
 %% By Rob J. Hyndman.
+%% 30 November 2016
 %%
 %% This class file is for honours and postgraduate research students
 %% in the Department of Econometrics & Business Statistics
@@ -15,6 +16,8 @@
 \newif\ifsinglesp@
 \newif\ifdoublesp@
 \newif\ifsingleside@
+\newif\ifarticle@
+\article@false
 \doublesp@true
 \singleside@false
 \DeclareOption{singleside}{\singleside@true}
@@ -25,18 +28,27 @@
 \DeclareOption{MComm}{\def\degreetitle{Master of Commerce}}
 \DeclareOption{MAE}{\def\degreetitle{Master of Applied Econometrics}}
 \DeclareOption{MPhil}{\def\degreetitle{Master of Philosophy}}
-\DeclareOption{Hons}{\def\degreetitle{Bachelor of Commerce (Honours)}}
+\DeclareOption{Hons}{\def\degreetitle{Bachelor of Commerce (Honours)}\article@true}
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{report}}
 
 \ExecuteOptions{PhD}
 
 \ProcessOptions
 
-\ifsingleside@%
-  \LoadClass[a4paper,oneside,openany,draft,11pt]{report}
+\ifarticle@%
+  \ifsingleside@%
+    \LoadClass[a4paper,oneside,11pt]{article}
+  \else%
+    \LoadClass[a4paper,11pt,twoside]{article}
+  \fi%
 \else%
-  \LoadClass[a4paper,11pt,openright,twoside]{report}
+  \ifsingleside@%
+    \LoadClass[a4paper,oneside,openany,draft,11pt]{report}
+  \else%
+    \LoadClass[a4paper,11pt,openright,twoside]{report}
+  \fi%
 \fi%
+
 
 %% Page dimensions
 \ifsingleside@%
@@ -186,38 +198,52 @@
   \space \number\the\year}
 
 \def\titlepage{{\sf
-		\thispagestyle{empty}%
-		\null\vskip1cm%
-		\begin{center}
-				\Huge\textbf{\expandafter{\@title}}
-		\end{center}
-		\vfill
-		\begin{center}\Large
-				{A thesis submitted
-				for the degree of\\[0.3cm] \degreetitle}
-		\end{center}
-		\vfill
-		\begin{center}
-				by\\[0.6cm]
-				{\LARGE\@author}\\[0.2cm]
+    \thispagestyle{empty}%
+    \null\vskip1cm%
+    \begin{center}
+        \Huge\textbf{\expandafter{\@title}}
+    \end{center}
+    \vfill
+    \begin{center}\Large
+        {A thesis submitted
+        for the degree of\\[0.3cm] \degreetitle}
+    \end{center}
+    \vfill
+    \begin{center}
+        by\\[0.6cm]
+        {\LARGE\@author}\\[0.2cm]
                 {\@degrees}
 
-				\vfill\vfill
+        \vfill\vfill
 
         \includegraphics[width=3cm]{figures/crest}
 
-				Department of Econometrics and Business Statistics\\
-				Monash University\\Australia
-		\end{center}
-				\begin{center}\large
-				\@submitdate
-		\end{center}
-		\newpage\thispagestyle{empty}}}
+        Department of Econometrics and Business Statistics\\
+        Monash University\\Australia
+    \end{center}
+        \begin{center}\large
+        \@submitdate
+    \end{center}
+    \newpage\thispagestyle{empty}}}
 
-\numberwithin{section}{chapter}
+\ifarticle@\else
+  \numberwithin{section}{chapter}
+\fi
 \numberwithin{equation}{section}
 
 \setcounter{tocdepth}{1}
+
+\ifarticle@
+  \def\prefacesection#1{%
+      \section*{#1}
+      \addcontentsline{toc}{section}{#1}
+      \markboth{#1}{#1}}
+\else%
+  \def\prefacesection#1{%
+      \chapter*{#1}
+      \addcontentsline{toc}{chapter}{#1}
+      \markboth{#1}{#1}}
+\fi
 
 \def\cleardoublepage{\clearpage\if@twoside \ifodd\c@page\else
 \hbox{}
@@ -234,6 +260,19 @@
         \setlength{\parskip}{\dimen100}
     }
 
+
+% to display the bibliography in table of contents
+\usepackage[nottoc,notlot,notlof]{tocbibind} 
+\usepackage{tocloft}
+\ifarticle@\else
+  \renewcommand{\cftchappagefont}{\sffamily\bfseries}
+  \renewcommand{\cftchapfont}{\sffamily\bfseries}
+\fi
+\renewcommand{\cftsecpagefont}{\sffamily}
+\renewcommand{\cftsubsecpagefont}{\sffamily}
+\renewcommand{\cftsecfont}{\sffamily}
+\renewcommand{\cftsubsecfont}{\sffamily}
+\renewcommand{\cfttoctitlefont}{\fontsize{24}{28}\sffamily\bfseries}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Extra stuff for Rmarkdown to work
