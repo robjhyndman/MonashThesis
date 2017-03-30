@@ -3,11 +3,14 @@ title: 'Thesis title'
 degreetype: 'Doctor of Philosophy'
 author: 'Joe Bloggs'
 degrees: 'B.Sc. (Hons), University of Tangambalanga'
+output: bookdown::pdf_book
+site: bookdown::bookdown_site
+link-citations: yes
 knit: "bookdown::render_book"
 ---
 
 <!-- 
-Edit these lines as appropriate (apart from line 6).
+Edit these lines as appropriate.
 The actual thesis content is in several Rmd files.
 
 You'll need to edit the _bookdown.yml file to set the order in which you'd like them to appear. 

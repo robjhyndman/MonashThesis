@@ -9,9 +9,10 @@ UseSpacesForTab: Yes
 NumSpacesForTab: 2
 Encoding: UTF-8
 
-RnwWeave: Sweave
+RnwWeave: knitr
 LaTeX: pdfLaTeX
-RootDocument: myThesis.Rmd
 
 AutoAppendNewline: Yes
 StripTrailingWhitespace: Yes
+
+BuildType: Website

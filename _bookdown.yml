@@ -1,6 +1,8 @@
 book_filename: "thesis"
-chapter_name: "Chapter "
-rmd_files: ["myThesis.Rmd",
+language:
+  ui:
+    chapter_name: "Chapter "
+rmd_files: ["index.Rmd",
   "00-acknowledge.Rmd",
   "00-declaration.Rmd",
   "00-preface.Rmd",

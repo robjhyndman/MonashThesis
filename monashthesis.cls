@@ -65,7 +65,7 @@
 \captionsetup[table]{style=italic,format=hang,singlelinecheck=true}
 
 %% FONT
-\RequirePackage{kpfonts}
+\RequirePackage{mathpazo}
 \RequirePackage[lf,t]{carlito}
 
 %% HEADERS AND FOOTERS
