@@ -26,7 +26,7 @@ For details on using _R Markdown_ see <http://rmarkdown.rstudio.com>.
 
 Included in this template is a file called `sales.csv`.  This contains quarterly data on Sales and Advertising budget for a small company over the period 1981--2005. It also contains the GDP (gross domestic product) over the same period. All series have been adjusted for inflation.  We can load in this data set using the following command:
 
-```{r loaddata}
+```{r loaddata, echo=TRUE}
 sales <- ts(read.csv("data/sales.csv")[,-1], start=1981, frequency=4)
 ```
 

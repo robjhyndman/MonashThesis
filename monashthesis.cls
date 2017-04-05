@@ -285,8 +285,8 @@
 \usepackage{fancyvrb}
 \newcommand{\VerbBar}{|}
 \newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
-\DefineVerbatimEnvironment{verbatim}{Verbatim}{xleftmargin=-1em}
-\DefineVerbatimEnvironment{Highlighting}{Verbatim}{xleftmargin=-1em,commandchars=\\\{\}}
+\DefineVerbatimEnvironment{verbatim}{Verbatim}{xleftmargin=0em}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{xleftmargin=0em,commandchars=\\\{\}}
 
 \newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{{#1}}}}
 \newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{{#1}}}
