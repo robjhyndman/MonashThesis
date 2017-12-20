@@ -6,6 +6,6 @@ bookdown::pdf_book:
   keep_tex: yes
   number_sections: yes
   pandoc_args: [
-    "--chapters"
+    "--top-level-division=chapter"
   ]
   citation_package: biblatex
