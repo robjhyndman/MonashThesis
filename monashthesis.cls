@@ -10,8 +10,12 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{monashthesis}[2016/09/06 Monash Thesis Class]
 
+%% FONT
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
+\RequirePackage{mathpazo}
+\RequirePackage[lf,t]{carlito}
+
 
 \newif\ifsinglesp@
 \newif\ifdoublesp@
@@ -63,10 +67,6 @@
  {labelfont={bf},textfont={it},labelsep=colon}
 \captionsetup[figure]{style=italic,format=hang,singlelinecheck=true}
 \captionsetup[table]{style=italic,format=hang,singlelinecheck=true}
-
-%% FONT
-\RequirePackage{mathpazo}
-\RequirePackage[lf,t]{carlito}
 
 %% HEADERS AND FOOTERS
 \RequirePackage{fancyhdr}
@@ -128,7 +128,8 @@
 \RequirePackage{microtype}
 
 %% BIBLIOGRAPHY
-\usepackage[style=authoryear,bibencoding=utf8,minnames=1,maxnames=3, maxbibnames=99,natbib=true,dashed=false,terseinits=true,giveninits=true,uniquename=false,uniquelist=false,labeldate=true,doi=false, isbn=false, natbib=true,backend=biber]{biblatex}
+\usepackage[style=authoryear-comp, backend=biber, natbib=true]{biblatex}
+\ExecuteBibliographyOptions{bibencoding=utf8,minnames=1,maxnames=3, maxbibnames=99,dashed=false,terseinits=true,giveninits=true,uniquename=false,uniquelist=false,doi=false, isbn=false,url=true,sortcites=false}
 
 \DeclareFieldFormat{url}{\url{#1}}
 \DeclareFieldFormat[article]{pages}{#1}
@@ -138,10 +139,10 @@
 \DeclareFieldFormat[article]{number}{\mkbibparens{#1}}
 \DeclareFieldFormat[article]{title}{\MakeCapital{#1}}
 \DeclareFieldFormat[article]{url}{}
-\DeclareFieldFormat[book]{url}{}
-\DeclareFieldFormat[inbook]{url}{}
-\DeclareFieldFormat[incollection]{url}{}
-\DeclareFieldFormat[inproceedings]{url}{}
+%\DeclareFieldFormat[book]{url}{}
+%\DeclareFieldFormat[inbook]{url}{}
+%\DeclareFieldFormat[incollection]{url}{}
+%\DeclareFieldFormat[inproceedings]{url}{}
 \DeclareFieldFormat[inproceedings]{title}{#1}
 \DeclareFieldFormat{shorthandwidth}{#1}
 %\DeclareFieldFormat{extrayear}{}
@@ -156,6 +157,9 @@
 \AtEveryBibitem{\clearfield{month}}
 \AtEveryCitekey{\clearfield{month}}
 
+\makeatletter
+\DeclareDelimFormat[cbx@textcite]{nameyeardelim}{\addspace}
+\makeatother
 
 %% PARAGRAPH BREAKS
 \setlength{\parskip}{1.4ex}
