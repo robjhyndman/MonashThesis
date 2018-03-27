@@ -20,8 +20,6 @@
 \newif\ifsinglesp@
 \newif\ifdoublesp@
 \newif\ifsingleside@
-\newif\ifarticle@
-\article@false
 \doublesp@true
 \singleside@false
 \DeclareOption{singleside}{\singleside@true}
@@ -32,27 +30,18 @@
 \DeclareOption{MComm}{\def\degreetitle{Master of Commerce}}
 \DeclareOption{MAE}{\def\degreetitle{Master of Applied Econometrics}}
 \DeclareOption{MPhil}{\def\degreetitle{Master of Philosophy}}
-\DeclareOption{Hons}{\def\degreetitle{Bachelor of Commerce (Honours)}\article@true}
+\DeclareOption{Hons}{\def\degreetitle{Bachelor of Commerce (Honours)}}
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{report}}
 
 \ExecuteOptions{PhD}
 
 \ProcessOptions
 
-\ifarticle@%
-  \ifsingleside@%
-    \LoadClass[a4paper,oneside,11pt]{article}
-  \else%
-    \LoadClass[a4paper,11pt,twoside]{article}
-  \fi%
+\ifsingleside@%
+  \LoadClass[a4paper,oneside,openany,draft,11pt]{report}
 \else%
-  \ifsingleside@%
-    \LoadClass[a4paper,oneside,openany,draft,11pt]{report}
-  \else%
-    \LoadClass[a4paper,11pt,openright,twoside]{report}
-  \fi%
+  \LoadClass[a4paper,11pt,openright,twoside]{report}
 \fi%
-
 
 %% Page dimensions
 \ifsingleside@%
@@ -228,24 +217,15 @@
     \end{center}
     \newpage\thispagestyle{empty}}}
 
-\ifarticle@\else
-  \numberwithin{section}{chapter}
-\fi
-\numberwithin{equation}{section}
+\numberwithin{section}{chapter}
+\numberwithin{equation}{chapter}
 
 \setcounter{tocdepth}{1}
 
-\ifarticle@
-  \def\prefacesection#1{%
-      \section*{#1}
-      \addcontentsline{toc}{section}{#1}
-      \markboth{#1}{#1}}
-\else%
-  \def\prefacesection#1{%
-      \chapter*{#1}
-      \addcontentsline{toc}{chapter}{#1}
-      \markboth{#1}{#1}}
-\fi
+\def\prefacesection#1{%
+    \chapter*{#1}
+    \addcontentsline{toc}{chapter}{#1}
+    \markboth{#1}{#1}}
 
 \def\cleardoublepage{\clearpage\if@twoside \ifodd\c@page\else
 \hbox{}
@@ -266,10 +246,8 @@
 % to display the bibliography in table of contents
 \usepackage[nottoc,notlot,notlof]{tocbibind}
 \usepackage{tocloft}
-\ifarticle@\else
-  \renewcommand{\cftchappagefont}{\sffamily\bfseries}
-  \renewcommand{\cftchapfont}{\sffamily\bfseries}
-\fi
+\renewcommand{\cftchappagefont}{\sffamily\bfseries}
+\renewcommand{\cftchapfont}{\sffamily\bfseries}
 \renewcommand{\cftsecpagefont}{\sffamily}
 \renewcommand{\cftsubsecpagefont}{\sffamily}
 \renewcommand{\cftsecfont}{\sffamily}
