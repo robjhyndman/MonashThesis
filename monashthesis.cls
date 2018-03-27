@@ -157,9 +157,7 @@
 \AtEveryBibitem{\clearfield{month}}
 \AtEveryCitekey{\clearfield{month}}
 
-\makeatletter
 \DeclareDelimFormat[cbx@textcite]{nameyeardelim}{\addspace}
-\makeatother
 
 %% PARAGRAPH BREAKS
 \setlength{\parskip}{1.4ex}
@@ -266,7 +264,7 @@
 
 
 % to display the bibliography in table of contents
-\usepackage[nottoc,notlot,notlof]{tocbibind} 
+\usepackage[nottoc,notlot,notlof]{tocbibind}
 \usepackage{tocloft}
 \ifarticle@\else
   \renewcommand{\cftchappagefont}{\sffamily\bfseries}
