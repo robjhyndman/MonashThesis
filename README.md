@@ -5,7 +5,9 @@ This repository provides a template for a Monash University PhD thesis using Rma
 
 ## Requirements
 
-Make sure you have a recent (2016+) version of LaTeX installed. You also need the following components:
+To set up the software, you will need to install a few R packages and LaTeX. This can be done within R as follows.
 
-  * [biber](https://www.ctan.org/tex-archive/biblio/biber)
-  * [Carlito font](https://www.ctan.org/pkg/carlito?lang=en)
+```r
+install.packages('bookdown')
+tinytex::install_tinytex()
+```
