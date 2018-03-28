@@ -1,7 +1,7 @@
 %% monashthesis Class for LaTeX2e.
-%% Version 4.1
+%% Version 5.0
 %% By Rob J. Hyndman.
-%% 30 November 2016
+%% 28 March 2018
 %%
 %% This class file is for honours and postgraduate research students
 %% in the Department of Econometrics & Business Statistics
@@ -13,9 +13,8 @@
 %% FONT
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
+\RequirePackage{bera}
 \RequirePackage{mathpazo}
-\RequirePackage[lf,t]{carlito}
-
 
 \newif\ifsinglesp@
 \newif\ifdoublesp@
@@ -26,14 +25,7 @@
 \DeclareOption{doubleside}{\singleside@false}
 \DeclareOption{singlespace}{\singlesp@true}
 \DeclareOption{doublespace}{\doublesp@true}
-\DeclareOption{PhD}{\def\degreetitle{Doctor of Philosophy}}
-\DeclareOption{MComm}{\def\degreetitle{Master of Commerce}}
-\DeclareOption{MAE}{\def\degreetitle{Master of Applied Econometrics}}
-\DeclareOption{MPhil}{\def\degreetitle{Master of Philosophy}}
-\DeclareOption{Hons}{\def\degreetitle{Bachelor of Commerce (Honours)}}
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{report}}
-
-\ExecuteOptions{PhD}
 
 \ProcessOptions
 
@@ -178,8 +170,10 @@
 
 %% \author, \title are defined in report; here are the rest of the
 %% front matter defining macros
+\def\degreetitle{Degree not specified}
 \def\submitdate#1{\gdef\@submitdate{#1}}
 \def\degrees#1{\gdef\@degrees{#1}}
+\def\studentid#1{\gdef\@degrees{#1}}
 \def\@title{}\def\@author{}
 \def\authorname{\@author}
 \def\@degrees{}
