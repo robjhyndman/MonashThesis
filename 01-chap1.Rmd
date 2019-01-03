@@ -46,8 +46,9 @@ We can fit a dynamic regression model to the sales data.
 
 ```{r, echo=FALSE}
 fit <- auto.arima(sales[,"Sales"], xreg=sales[,2:3], D=1)
-if(!identical(fit$arma, c(0L,1L,0L,1L,4L,0L,1L)))
-  stop("Model not ARIMA(0,0,1)(0,1,1)[4]")
+if(!identical(fit$arma, c(1L,0L,0L,1L,4L,0L,1L))) {
+  stop("Model not ARIMA(1,0,0)(0,1,1)[4]")
+}
 #This is an example of how to put checks into your R code to warn you if something has gone wrong. 
 ```
 
@@ -69,7 +70,7 @@ Let's assume future advertising spend and GDP are at the current levels. Then fo
 ```{r forecasts, results="asis"}
 currentad <- rep(tail(sales[,"AdBudget"],1),4)
 currentgdp <- rep(tail(sales[,"GDP"],1),4)
-fc <- forecast(fit, xreg=data.frame(AdBudget=currentad, GDP=currentgdp))
+fc <- forecast(fit, xreg=cbind(AdBudget=currentad, GDP=currentgdp))
 knitLatex::xTab(format(as.data.frame(fc), nsmall=1, digits=1),
    caption.bottom="Forecasts for the next year assuming Advertising budget and GDP are unchanged.",
    booktabs=TRUE, 
