@@ -194,7 +194,7 @@
         Department of Econometrics and Business Statistics
     \end{center}
     \hrulefill
-    \newpage\thispagestyle{empty}}}
+    \newpage\mbox{}\thispagestyle{empty}\newpage}}
 
 \numberwithin{section}{chapter}
 \numberwithin{equation}{chapter}
