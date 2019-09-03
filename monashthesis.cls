@@ -177,38 +177,23 @@
 \def\@title{}\def\@author{}
 \def\authorname{\@author}
 \def\@degrees{}
-\def\@submitdate{\ifcase\the\month\or
-  January\or February\or March\or April\or May\or June\or
-  July\or August\or September\or October\or November\or December\fi
-  \space \number\the\year}
+\def\@submitdate{\number\the\year}
 
 \def\titlepage{{\sf
     \thispagestyle{empty}%
     \null\vskip1cm%
-    \begin{center}
-        \Huge\textbf{\expandafter{\@title}}
-    \end{center}
-    \vfill
-    \begin{center}\Large
-        {A thesis submitted
-        for the degree of\\[0.3cm] \degreetitle}
-    \end{center}
+    \includegraphics[width=15cm]{figures/monash-logo}
     \vfill
     \begin{center}
-        by\\[0.6cm]
-        {\LARGE\@author}\\[0.2cm]
-                {\@degrees}
-
-        \vfill\vfill
-
-        \includegraphics[width=3cm]{figures/crest}
-
-        Department of Econometrics and Business Statistics\\
-        Monash University\\Australia
+        \Large\textbf{\expandafter{\@title}}\\
+        \@author\\
+        \@degrees
+    \vfill
+        A thesis submitted for the degree of \degreetitle { } at\\
+        Monash University in \@submitdate\\
+        Department of Econometrics and Business Statistics
     \end{center}
-        \begin{center}\large
-        \@submitdate
-    \end{center}
+    \hrulefill
     \newpage\thispagestyle{empty}}}
 
 \numberwithin{section}{chapter}

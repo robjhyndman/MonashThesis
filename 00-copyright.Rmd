@@ -1,0 +1,21 @@
+---
+knit: "bookdown::render_book"
+---
+
+# Copyright notice {-}
+
+(Choose one of the following notices.)
+
+(Notice 1)
+
+\textcopyright { } The author (insert year). 
+
+The second notice certifies the appropriate use of any third-party material in the thesis. Students choosing to deposit their thesis into the restricted access section of the repository are not required to complete Notice 2. 
+
+(Notice 2)
+
+\textcopyright { } The author (insert year). 
+
+I certify that I have made all reasonable efforts to secure copyright permissions for third-party content included in this thesis and have not knowingly added copyright content to my work without the owner's permission.
+
+\newpage

@@ -4,18 +4,8 @@ knit: "bookdown::render_book"
 
 # Abstract {-}
 
-This thesis is about ...
+The abstract should outline the main approach and findings of the thesis and must not be more than 500 words.
 
+(1 page, next page blank; 2 pages, no blank page)
 
-
-
-
-
-
-
-
-
-<!-- 
-The following line is required to re-set page numbering after preliminary material. Do not remove
--->
-\clearpage\pagenumbering{arabic}\setcounter{page}{0}
+\newpage
