@@ -22,9 +22,14 @@ I have / have not renumbered sections of submitted or published papers in order 
 
 \begin{table}
 \centering\footnotesize\tabcolsep=0.12cm
-\begin{tabular}{|p{1cm}|p{2cm}|p{1.5cm}|p{3.5cm}|p{3.5cm}|p{1.5cm}|}
+\begin{tabular}{|p{1.2cm}|p{2cm}|p{1.8cm}|p{3.4cm}|p{3.5cm}|p{1.5cm}|}
 \hline
-\textbf{Thesis Chapter}  & \textbf{Publication Title}  & \textbf{Status (published, in press, accepted or returned for revision)}  &  \textbf{Nature and} {\%} \textbf{of student contribution} & \textbf{Co-author name(s) Nature and} {\%} \textbf{of Co-author’s contribution} &  \textbf{Co-author(s), Monash student Y/N} \\ \hline
+\RaggedRight\textbf{Thesis chapter}  & 
+\RaggedRight\textbf{Publication title}  & 
+\RaggedRight\textbf{Status (published, in press, accepted or returned for revision)}  &  
+\RaggedRight\textbf{Nature and \% of student contribution} & 
+\RaggedRight\textbf{Co-author name(s), nature and \% of co-author’s contribution} &  \RaggedRight\textbf{Co-author(s), Monash student Y/N} \\ 
+\hline
 2 & xx & xx  & xx & xx & \multicolumn{1}{c|}{N}   \\
 \hline
 3 & xx & xx  & xx & xx  & \multicolumn{1}{c|}{N}   \\
